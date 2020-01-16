@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New list{% endblock %}
+
+{% block body %}
+    <div class="content ring">
+        <div class="container">
+            <h1>Create new list</h1>
+        </div>
+
+        <div class="container">
+            {{ form_start(CreateListForm) }}
+            {{ form_row(CreateListForm.listename) }}
+            {{ form_end(CreateListForm) }}
+        </div>
+    </div>
+{% endblock %}

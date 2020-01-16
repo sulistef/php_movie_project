@@ -1,0 +1,30 @@
+object(stdClass)#650 (25) {
+["adult"]=> bool(false)
+["backdrop_path"]=> string(32) "/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg"
+["belongs_to_collection"]=> object(stdClass)#651 (4) {
+    ["id"]=> int(86311) ["name"]=> string(23) "The Avengers Collection"
+    ["poster_path"]=> string(32) "/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg"
+    ["backdrop_path"]=> string(32) "/zuW6fOiusv4X9nnW3paHGfXcSll.jpg" }
+    ["budget"]=> int(300000000)
+
+["genres"]=> array(3) {
+    [0]=> object(stdClass)#652 (2) { ["id"]=> int(12) ["name"]=> string(9) "Adventure" }
+    [1]=> object(stdClass)#653 (2) { ["id"]=> int(28) ["name"]=> string(6) "Action" }
+    [2]=> object(stdClass)#654 (2) { ["id"]=> int(878) ["name"]=> string(15) "Science Fiction" } }
+
+["homepage"]=> string(63) "http://marvel.com/movies/movie/223/avengers_infinity_war_part_1"
+["id"]=> int(299536)
+["imdb_id"]=> string(9) "tt4154756"
+["original_language"]=> string(2) "en"
+["original_title"]=> string(22) "Avengers: Infinity War"
+["overview"]=> string(490) "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain."
+["popularity"]=> float(82.512)
+["poster_path"]=> string(32) "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+["production_companies"]=> array(1) { [0]=> object(stdClass)#655 (4) { ["id"]=> int(420) ["logo_path"]=> string(32) "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png" ["name"]=> string(14) "Marvel Studios" ["origin_country"]=> string(2) "US" } }
+["production_countries"]=> array(1) { [0]=> object(stdClass)#656 (2) { ["iso_3166_1"]=> string(2) "US" ["name"]=> string(24) "United States of America" } } ["release_date"]=> string(10) "2018-04-25" ["revenue"]=> int(2046239637) ["runtime"]=> int(149) ["spoken_languages"]=> array(1) { [0]=> object(stdClass)#657 (2) { ["iso_639_1"]=> string(2) "en" ["name"]=> string(7) "English" } }
+["status"]=> string(8) "Released"
+["tagline"]=> string(37) "An entire universe. Once and for all."
+["title"]=> string(22) "Avengers: Infinity War"
+["video"]=> bool(false)
+["vote_average"]=> float(8.3)
+["vote_count"]=> int(16005) }

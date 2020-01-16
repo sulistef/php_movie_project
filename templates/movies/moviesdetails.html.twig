@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Movie - {{ movie.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div class="txt-center">
+
+            <div class = "findmoviemini">
+                <form action="/movies/search" method="post">
+                    <input type="text" placeholder="find a movie ..." name="movietosearch"/>
+                    <button>Find</button>
+                </form>
+            </div>
+
+            <div class="conainer txt-center" style="margin-top: 50px;">
+
+                {% if movie %}
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
+                            <img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" class="card-img-top img-responsive" alt="{{ movie.title }}">
+                            <div>
+                                <br />
+                                <h5>Add to list</h5>
+                                <ul>
+                                    {% for list in lists %}
+                                        <li><a href="/lists/addto?movieId={{ movie.id }}&listId={{ list.id }}">{{ list.listename }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+                            <h3 class="card-title">{{ movie.title }}</h3>
+                            <h4>Overview</h4>
+                            <p class="card-text">{{ movie.overview }}</p>
+
+                            <div class = "row">
+                                <div class = "col-md-2 col-sm-2 col-lg-2">
+                                    <h5>Genres</h5>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-lg-10">
+                                    {%  for genr in movie.genres %}
+                                        <span class="tag">{{ genr.name }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class = "col-md-2 col-sm-2 col-lg-2">
+                                    <h5>Homepage</h5>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-lg-10">
+                                    <a href="{{ movie.homepage }}" target="_blank">{{ movie.homepage }}</a>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class = "col-md-12 col-sm-12 col-lg-12">
+                                    <h5>Credits</h5>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-lg-10">
+                                    <div class="row">
+                                        {% for credit in credits.cast %}
+                                            <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
+                                                <div class="card" style="width: 10rem;">
+                                                    <img src="https://image.tmdb.org/t/p/w154{{ credit.profile_path}}">
+                                                    <div class="card-body">
+                                                        <strong class="card-title">{{ credit.name }}</strong>
+                                                        <p class="card-text">as {{ credit.character }}</p>
+{#                                                        <a href="/movies/detail?movieid={{ movie.id }}" class="btn btn-primary">More info</a>#}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <h2>There is no information to display</h2>>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

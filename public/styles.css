@@ -1,0 +1,192 @@
+h1 {
+    margin-top: 20px;
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+}
+
+body {
+    margin-top: 53px;
+    background: #a8d0e6;
+}
+
+
+.navbar-custom {
+    background-color: #24305E;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #a8d0e6;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #a8d0e6;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link, .navbar-custom .nav-item:visited .nav-link {
+    color: #f76c6c;
+}
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #f8e9a1;
+}
+
+.advsearch {
+    font-size: 10px;
+}
+
+.avengers {
+    margin-top: 54px;
+    background-image:
+    linear-gradient(to bottom, rgba(0,0,125,0.8), rgba(168,208,230,1)),
+    url('medias/av-end.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.avengers h1, .ring h1 .fight h1 {
+    color: #a8d0e6;
+}
+
+.ring {
+    margin-top: 54px;
+    background-image:
+    linear-gradient(to bottom, rgba(0,0,125,0.8), rgba(168,208,230,1)),
+    url('medias/ring.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    color: #a8d0e6;
+}
+
+.fight {
+    margin-top: 54px;
+    background-image:
+            linear-gradient(to bottom, rgba(0,0,125,0.8), rgba(168,208,230,1)),
+            url('medias/fight.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 800px;
+    color: #a8d0e6;
+}
+
+.findmovie {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 28px;
+}
+.findmovie input {
+    border: 3px solid #f76c6c;
+    border-radius: 8px;
+    padding: 4px;
+    width: 500px;
+}
+.findmovie button {
+    border: 3px solid #f76c6c;
+    border-radius: 8px;
+    background: #f76c6c;
+    padding: 4px;
+}
+
+.findmovie button:hover {
+    background: #f8e9a1;
+}
+
+
+
+.findmoviemini {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.findmoviemini input {
+    border: 2px solid #f76c6c;
+    border-radius: 4px;
+    padding: 2px;
+    width: 500px;
+}
+.findmoviemini button {
+    border: 2px solid #f76c6c;
+    border-radius: 4px;
+    background: #f76c6c;
+    padding: 2px;
+}
+
+.findmoviemini button:hover {
+    background: #f8e9a1;
+}
+
+.movieItem {
+    background: #374785;
+    padding: 4px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 60%;
+}
+
+.card{
+    margin-bottom: 10px;
+}
+
+/*.card-img-top {*/
+/*    object-fit: none; !* Do not scale the image *!*/
+/*    object-position: center; !* Center the image within the element *!*/
+/*    width: 100%;*/
+/*    max-height: 250px;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+.tag {
+    font-size: 8px;
+    padding: 4px;
+    background: #374785;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.movie {
+    float: left;
+    margin-top: 3px;
+    margin-right: 4px;
+    font-size: 8px;
+    padding: 4px;
+    background: #f76c6c;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.tv {
+    float: left;
+    margin-top: 3px;
+    margin-right: 4px;
+    font-size: 8px;
+    padding: 4px;
+    background: #f8e9a1;
+    color: #000000;
+    border-radius: 4px;
+}
+
+.person {
+    float: left;
+    margin-top: 3px;
+    margin-right: 4px;
+    font-size: 8px;
+    padding: 4px;
+    background: #a8d0e6;
+    color: #000000;
+    border-radius: 4px;
+}
+
+
+footer {
+    margin-top: 40px;
+    background: #24305E;
+    min-height: 150px;
+}

@@ -1,0 +1,6 @@
+#RewriteEngine on
+#RewriteBase /public
+#RewriteRule / /public
+##RewriteRule (.*) public/$1 [L]
+#RewriteRule /public/(([A-Za-z0-9.-_*+$^]*)$) /$1 [L]
+#RewriteRule /movies/search/([A-Za-z0-9.-_*+$^]*)$ /movies/search?movietosearch=$1 [L]

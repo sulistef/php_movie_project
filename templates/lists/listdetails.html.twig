@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List content{% endblock %}
+
+{% block body %}
+    <div class="content ring">
+        <div class="container">
+            <h1>{{ list.listename }}</h1>
+        </div>
+        <div class="container">
+            {% for item in content %}
+                <div class="row">
+                        <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><img src="{{ asset('medias/movie.png') }}" border="0" width="13" height="13" /> <a href="/movies/detail?movieid={{ item.id }}">{{ item.title }}</a></div>
+                    <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><a href="/lists/remove?listId={{ list.id }}&movieId={{ item.id }}">Remove</a></div>
+                </div>
+            {% endfor %}
+            <br /><br /><br />
+            {% if list.listename != 'Favorites' %}
+                <form action="/lists/delete"  method="POST">
+                    <input type="hidden" name="id" value="{{ list.id }}" />
+                    <button class="btn btn-danger">Delete list</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron txt-center">
+        <div>
+                <h1>Advanced search</h1>
+
+            <div class = findmovie>
+                <form action="/movies/advsearch" method="post">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+                            <label for="movieTitle">Title</label>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-lg-10 col-xs-10 txt-left">
+                            <input type="text" placeholder="find by title" name="movieTitle" id = "movieTitle"/>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+                            <label for="movieDate">Release date</label>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-lg-10 col-xs-10 txt-left">
+                            <input type="date" name="movieDate" id = "movieDate"/>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+                            <label for="movieActor">Actor</label>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-lg-10 col-xs-10 txt-left">
+                            <input type="text" name="movieActor" id = "movieActor"/>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+                            <label for="movieGenre">Genre</label>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-lg-10 col-xs-10 txt-left">
+                            <select name = "movieGenre" id="movieGenre">
+                                <option selected value="">Select genre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button>Find</button><br />
+                    <a href="/" class="advsearch">Standard search</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

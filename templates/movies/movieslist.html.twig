@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Search results
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div class="txt-center">
+
+            <div class = "findmoviemini">
+                <form action="/movies/search" method="post">
+                    <input type="text" placeholder="find ..." name="movietosearch"/>
+                    <button>Find</button>
+                </form>
+            </div>
+
+            <div class="conainer txt-center">
+                <h1>Search results</h1>
+
+                {% if movies.results|length > 0 %}
+                    <div class="row">
+                        {% for movie in movies.results %}
+                            <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+                                <div class="card" style="width: 22rem;">
+                                    <a href="/movies/detail?movieid={{ movie.id }}"><img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" class="card-img-top img-responsive" alt="{{ movie.title }}" border="0"></a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ movie.title }}</h5>
+                                        <p class="card-text">{{ movie.overview|truncate }}</p>
+                                        <p class="card-text">
+                                            {% for ge in movie.genre_ids %}
+                                                {% for i in 0..18 %}
+                                                    {% if ge == genres.genres[loop.index0].id %}
+                                                        <span class="tag">{{ genres.genres[loop.index0].name }}</span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                        </p>
+                                        <p class="card-text">
+
+                                        </p>
+                                        <a href="/movies/detail?movieid={{ movie.id }}" class="btn btn-primary">More info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <h3>There are no result.</h3>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

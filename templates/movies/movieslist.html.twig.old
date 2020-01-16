@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Search results
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div class="txt-center">
+
+            <div class = "findmoviemini">
+                <form action="/movies/search" method="post">
+                    <input type="text" placeholder="find ..." name="movietosearch"/>
+                    <button>Find</button>
+                </form>
+            </div>
+
+            <div class="conainer txt-center">
+                <h1>Search results</h1>
+
+                {% if results.results|length > 0 %}
+                    <div class="row">
+                        {% for movie in results.results %}
+
+                            {% if movie.media_type == 'movie' %}
+                                <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+                                    <div class="card" style="width: 22rem;">
+                                        <a href="/movies/detail?movieid={{ movie.id }}"><img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" class="card-img-top img-responsive" alt="{{ movie.title }}" border="0"></a>>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ movie.title }} <span class="{{ movie.media_type }}">{{ movie.media_type }}</span></h5>
+                                            <p class="card-text">{{ movie.overview|truncate }}</p>
+                                            <p class="card-text">
+                                                {% for ge in movie.genre_ids %}
+                                                    {% for i in 0..18 %}
+                                                        {% if ge == genres.genres[loop.index0].id %}
+                                                            <span class="tag">{{ genres.genres[loop.index0].name }}</span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            </p>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <a href="/movies/detail?movieid={{ movie.id }}" class="btn btn-primary">More info</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            {% elseif movie.media_type == 'tv' %}
+                                <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+                                    <div class="card" style="width: 22rem;">
+                                        <img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" class="card-img-top img-responsive" alt="{{ movie.name }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ movie.name }} <span class="{{ movie.media_type }}">{{ movie.media_type }}</span></h5>
+                                            <p class="card-text">{{ movie.overview|truncate }}</p>
+                                            <p class="card-text">
+                                                {% for ge in movie.genre_ids %}
+                                                    {% for i in 0..18 %}
+                                                        {% if ge == genres.genres[loop.index0].id %}
+                                                            <span class="tag">{{ genres.genres[loop.index0].name }}</span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            </p>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <a href="/movies/detail?movieid={{ movie.id }}" class="btn btn-primary">More info</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% elseif movie.media_type == 'person' %}
+                                <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+                                    <div class="card" style="width: 22rem;">
+                                        <img src="https://image.tmdb.org/t/p/w300{{ movie.profile_path }}" class="card-img-top img-responsive" alt="{{ movie.name }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ movie.name }} <span class="{{ movie.media_type }}">{{ movie.media_type }}</span></h5>
+                                            <p class="card-text">{{ movie.known_for_department }}</p>
+                                            <p class="card-text">
+                                                {% if movie.known_for %}
+                                                    <div>
+                                                        {% for know in movie.known_for.0 %}
+                                                            {% for kn in know %}
+                                                                {{ kn.title }}
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endif %}
+                                            </p>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <a href="/movies/detail?movieid={{ movie.id }}" class="btn btn-primary">More info</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endif %}
+
+
+
+
+
+
+
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <h3>There are no result.</h3>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

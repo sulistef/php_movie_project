@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete Profile{% endblock %}
+
+{% block body %}
+    <div class="content ring">
+        <div class="container">
+            <h1>Are you sure you want to delete your profile ?</h1>
+        </div>
+
+        <div class="container">
+            <br />
+                {{ form_start(delForm) }}
+                <button type="submit" class="btn btn-danger align-self-end">Yes, delete my account</button>
+                {{ form_end(delForm) }}
+                <button type="cancel" class="btn btn-warning" onclick="javascript:window.location='/';">Cancel</button>
+
+        </div>
+    </div>
+{% endblock %}

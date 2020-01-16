@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New list{% endblock %}
+
+{% block body %}
+    <div class="content ring">
+        <div class="container">
+            <h1>My lists</h1>
+        </div>
+        <div class="container">
+        {% for list in lists %}
+            <div class="row">
+                <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8"><a href="/lists/content?listId={{ list.id }}">{{ list.listename }}</a></div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

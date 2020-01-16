@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    My personal Movie Site
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid txt-center avengers">
+        <br /><br />
+        <div>
+            {% if app.user %}
+                <h1>Hello {{ app.user.username }}</h1>
+            {% else %}
+                <h1>Welcome !</h1>
+            {% endif %}
+
+            <div class = findmovie>
+                <form action="/movies/search" method="post">
+                    <input type="text" placeholder="find ..." name="movietosearch"/>
+{#                    <select name="type">#}
+{#                        <option selected value="movie">movie</option>#}
+{#                        <option value="actor">actor</option>#}
+{#                    </select>#}
+                    <button>Find</button><br />
+{#                    <a href="/movies/advsearch" class="advsearch">Advanced search</a>#}
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
